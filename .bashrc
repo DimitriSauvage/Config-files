@@ -38,12 +38,13 @@ else
 fi
 
 # Node
-# alias npm14="docker run -e NPM_CONFIG_LOGLEVEL=info -v "$PWD":/usr/src/app -w /usr/src/app node:14-alpine npm"
-# alias node14="docker run -e NPM_CONFIG_LOGLEVEL=info -v "$PWD":/usr/src/app -w /usr/src/app node:14-alpine node"
-# alias npx14="docker run  -e NPM_CONFIG_LOGLEVEL=info-v "$PWD":/usr/src/app -w /usr/src/app node:14-alpine npx"
+# alias npm14="docker run -v \"$PWD\":/usr/src/app -w /usr/src/app node:14-alpine npm --loglevel=info"
+# alias node14="docker run  -v \"$PWD\":/usr/src/app -w /usr/src/app node:14-alpine node"
+# alias npx14="docker run -v \"$PWD\":/usr/src/app -w /usr/src/app node:14-alpine npx"
 # alias npm=npm14
 # alias node=node14
 # alias npx=npx14
+
 
 # Sql Server
 alias sqlServer2019="cd $GITHUB_FOLDER/Docker-files/SqlServer-2019;
