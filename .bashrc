@@ -8,6 +8,32 @@ SSH_ENV="$HOME/.ssh/environment" # SSH environment path
 ############### Configuration ###############
 #############################################
 
+#Hide the SSH logs
+function run_ssh_env() {
+  . "${SSH_ENV}" >/dev/null
+}
+
+#Start the SSH
+function start_ssh_agent() {
+  echo "Initializing new SSH agent..."
+  ssh-agent | sed 's/^echo/#echo/' >"${SSH_ENV}"
+  echo "succeeded"
+  chmod 600 "${SSH_ENV}"
+
+  run_ssh_env
+
+  ssh-add ~/.ssh/id_rsa
+}
+
+if [ -f "${SSH_ENV}" ]; then
+  run_ssh_env
+  ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ >/dev/null || {
+    start_ssh_agent
+  }
+else
+  start_ssh_agent
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -58,12 +84,12 @@ fi
 
 # Display the git branch in the bash
 parse_git_branch() {
- git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 if [ "$color_prompt" = yes ]; then
- PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]\$ '
 else
- PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(parse_git_branch)\$ '
+  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(parse_git_branch)\$ '
 fi
 
 unset color_prompt force_color_prompt
