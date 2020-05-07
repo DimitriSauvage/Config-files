@@ -8,6 +8,10 @@ SSH_ENV="$HOME/.ssh/environment" # SSH environment path
 ############### Configuration ###############
 #############################################
 
+#Add dotnet to the path 
+export DOTNET_ROOT=/usr/share/dotnet
+export PATH=$PATH:$DOTNET_ROOT
+
 #Hide the SSH logs
 function run_ssh_env() {
   . "${SSH_ENV}" >/dev/null
