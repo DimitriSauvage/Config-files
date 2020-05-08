@@ -2,24 +2,24 @@
 ################# Variables #################
 #############################################
 
-DATA_FOLDER="/data/Dimitri"         # Folder containing data
-GITHUB_FOLDER="$DATA_FOLDER/Github" # Github folder
+DATA_FOLDER="/home/dsauvage"        # Folder containing data
+GIT_FOLDER="$DATA_FOLDER/Git" 	    # Github folder
 
 #############################################
 ################## Aliases ##################
 #############################################
 
 # Node
-NODE_CONTAINER="node"
-alias npm14="docker run -v \"$PWD\":/usr/src/app -w /usr/src/app ${NODE_CONTAINER}:14 npm"
-alias node14="docker run  -v \"$PWD\":/usr/src/app -w /usr/src/app ${NODE_CONTAINER}:14 node"
-alias npx14="docker run -v \"$PWD\":/usr/src/app -w /usr/src/app ${NODE_CONTAINER}:14 npx"
+NODE_CONTAINER_IMAGE="node"
+alias npm14="docker run -v \"$PWD\":/usr/src/app -w /usr/src/app ${NODE_CONTAINER_IMAGE}:14 npm"
+alias node14="docker run  -v \"$PWD\":/usr/src/app -w /usr/src/app ${NODE_CONTAINER_IMAGE}:14 node"
+alias npx14="docker run -v \"$PWD\":/usr/src/app -w /usr/src/app ${NODE_CONTAINER_IMAGE}:14 npx"
 alias npm=npm14
 alias node=node14
 alias npx=npx14
 
 # Sql Server
-alias sqlServer2019="cd $GITHUB_FOLDER/Docker-files/SqlServer-2019;
+alias sqlServer2019="cd $GIT_FOLDER/Docker-files/SqlServer-2019;
 docker-compose up;
 cd $OLDPWD"
 alias sqlServer=sqlServer2019
@@ -28,7 +28,7 @@ alias sqlServer=sqlServer2019
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias github="cd $GITHUB_FOLDER"
+alias git="cd $GIT_FOLDER"
 alias home="cd ~/"
 alias data="cd ~/data"
 alias gl="git log --oneline --graph --decorate --all"
