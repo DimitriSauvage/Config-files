@@ -24,6 +24,12 @@ docker-compose up;
 cd $OLDPWD"
 alias sqlServer=sqlServer2019
 
+#MySql/MariaDb
+alias mariaDb-10.5.2="cd $GIT_FOLDER/Docker-files/MariaDb-10.5.2;
+docker-compose up;
+cd $OLDPWD"
+alias mariaDb=mariaDb-10.5.2
+
 # Useful aliases
 alias ll='ls -alF'
 alias la='ls -A'
