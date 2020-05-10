@@ -1,42 +1,7 @@
 #############################################
-################# Variables #################
-#############################################
-
-SSH_ENV="$HOME/.ssh/environment" # SSH environment path
-
-#############################################
 ############### Configuration ###############
-#############################################
+############################################
 
-#Add dotnet to the path 
-export DOTNET_ROOT=/usr/share/dotnet
-export PATH=$PATH:$DOTNET_ROOT
-
-#Hide the SSH logs
-function run_ssh_env() {
-  . "${SSH_ENV}" >/dev/null
-}
-
-#Start the SSH
-function start_ssh_agent() {
-  echo "Initializing new SSH agent..."
-  ssh-agent | sed 's/^echo/#echo/' >"${SSH_ENV}"
-  echo "succeeded"
-  chmod 600 "${SSH_ENV}"
-
-  run_ssh_env
-
-  ssh-add ~/.ssh/id_rsa
-}
-
-if [ -f "${SSH_ENV}" ]; then
-  run_ssh_env
-  ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ >/dev/null || {
-    start_ssh_agent
-  }
-else
-  start_ssh_agent
-fi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options

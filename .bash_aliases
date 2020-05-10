@@ -2,12 +2,15 @@
 ################# Variables #################
 #############################################
 
-DATA_FOLDER="/home/dsauvage"        # Folder containing data
-GIT_FOLDER="$DATA_FOLDER/Git" 	    # Github folder
+DATA_FOLDER="/home/dsauvage"  # Folder containing data
+GIT_FOLDER="$DATA_FOLDER/Git" # Github folder
 
 #############################################
 ################## Aliases ##################
 #############################################
+
+# Dotnet SDK in Ubuntu
+export dotnet=dotnet-sdk.dotnet
 
 # Node
 NODE_CONTAINER_IMAGE="node"
