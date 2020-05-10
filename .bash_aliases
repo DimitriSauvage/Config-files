@@ -10,8 +10,9 @@ GIT_FOLDER="$DATA_FOLDER/Git" # Github folder
 #############################################
 
 # Dotnet SDK in Ubuntu
-alias dotnet=dotnet-sdk.dotnet
-export PATH="$PATH:/home/dsauvage/.dotnet/tools"
+export DOTNET_ROOT="$HOME/dotnet"
+export PATH="$PATH:$DOTNET_ROOT"
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 # Node
 NODE_CONTAINER_IMAGE="node"
@@ -23,15 +24,12 @@ alias node=node14
 alias npx=npx14
 
 # Sql Server
-alias sqlServer2019="cd $GIT_FOLDER/Docker-files/SqlServer-2019;
-docker-compose up;
-cd $OLDPWD"
+alias sqlServer2019="docker-compose -f $GIT_FOLDER/Docker-files/SqlServer/SqlServer-2019/docker-compose.yml up"
+alias sqlServer2017="docker-compose -f $GIT_FOLDER/Docker-files/SqlServer/SqlServer-2017/docker-compose.yml up"
 alias sqlServer=sqlServer2019
 
 #MySql/MariaDb
-alias mariaDb-10.5.2="cd $GIT_FOLDER/Docker-files/MariaDb-10.5.2;
-docker-compose up;
-cd $OLDPWD"
+alias mariaDb-10.5.2="docker-compose -f $GIT_FOLDER/Docker-files/MariaDb/MariaDb-10.5.2/docker-compose.yml up"
 alias mariaDb=mariaDb-10.5.2
 
 # Useful aliases
