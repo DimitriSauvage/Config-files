@@ -11,6 +11,7 @@ GIT_FOLDER="$DATA_FOLDER/Git" # Github folder
 
 # Dotnet SDK in Ubuntu
 alias dotnet=dotnet-sdk.dotnet
+export PATH="$PATH:/home/dsauvage/.dotnet/tools"
 
 # Node
 NODE_CONTAINER_IMAGE="node"
