@@ -1,0 +1,17 @@
+[/]
+appicon-margin=4
+appicon-padding=4
+dot-style-unfocused='DASHES'
+force-check-update=false
+hotkeys-overlay-combo='TEMPORARILY'
+location-clock='STATUSRIGHT'
+panel-size=43
+secondarymenu-contains-appmenu=false
+secondarymenu-contains-showdetails=true
+show-activities-button=false
+show-show-apps-button=false
+show-showdesktop-button=true
+stockgs-panelbtn-click-only=true
+trans-use-custom-bg=true
+trans-use-custom-opacity=false
+tray-size=16
