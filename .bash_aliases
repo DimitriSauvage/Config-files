@@ -1,8 +1,7 @@
 #############################################
 ################# Variables #################
 #############################################
-DATA_FOLDER="/home/$USER"  # Folder containing data
-GIT_FOLDER="$DATA_FOLDER/Git" # Github folder
+GIT_FOLDER="$HOME/Git" # Github folder
 
 #############################################
 ################## Aliases ##################
@@ -32,7 +31,8 @@ alias mariaDb-10.5.2="docker-compose -f $GIT_FOLDER/Docker-files/MariaDb/MariaDb
 alias mariaDb=mariaDb-10.5.2
 
 # Useful aliases
-alias rm=trash
+alias apt='apt-fast'
+alias rm='trash'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
