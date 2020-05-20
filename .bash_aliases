@@ -34,6 +34,7 @@ alias mariaDb=mariaDb-10.5.2
 # Useful aliases
 alias apt='apt-fast'
 alias rm='trash'
+alias ls="ls --color=none"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
