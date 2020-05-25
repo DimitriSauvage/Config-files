@@ -15,9 +15,10 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 # Node
 NODE_CONTAINER_IMAGE="node"
-alias npm14="docker run -v $PWD:/usr/src/app -w /usr/src/app ${NODE_CONTAINER_IMAGE}:14 npm --loglevel=info"
-alias node14="docker run -v $PWD:/usr/src/app -w /usr/src/app ${NODE_CONTAINER_IMAGE}:14 node --loglevel=info"
-alias npx14="docker run -v $PWD:/usr/src/   app -w /usr/src/app ${NODE_CONTAINER_IMAGE}:14 npx --loglevel=info"
+__NODE_FILES_LOCATION="/var/data/src/"
+alias npm14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 npm --loglevel=info"
+alias node14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 node --loglevel=info"
+alias npx14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 npx --loglevel=info"
 alias npm=npm14
 alias node=node14
 alias npx=npx14
