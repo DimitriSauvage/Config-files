@@ -2,7 +2,7 @@
 ################# Variables #################
 #############################################
 CUSTOM_HOME="/mnt/c/Users/dimit"
-GIT_FOLDER="$CUSTOM_HOME/Git" # Github folder
+GIT_FOLDER="$HOME/Git" # Github folder
 
 #############################################
 ################## Aliases ##################
@@ -14,14 +14,14 @@ export PATH="$PATH:$DOTNET_ROOT"
 export PATH="$PATH:$HOME/.dotnet/tools"
 
 # Node
-NODE_CONTAINER_IMAGE="node"
-__NODE_FILES_LOCATION="/var/data/src/"
-alias npm14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 npm --loglevel=info"
-alias node14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 node --loglevel=info"
-alias npx14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 npx --loglevel=info"
-alias npm=npm14
-alias node=node14
-alias npx=npx14
+# NODE_CONTAINER_IMAGE="node"
+# __NODE_FILES_LOCATION="/var/data/src"
+# alias npm14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 npm --loglevel=verbose"
+# alias node14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 node --loglevel=verbose"
+# alias npx14="docker run -v $PWD:$__NODE_FILES_LOCATION -w $__NODE_FILES_LOCATION ${NODE_CONTAINER_IMAGE}:14 npx --loglevel=verbose"
+# alias npm=npm14
+# alias node=node14
+# alias npx=npx14
 
 # Sql Server
 alias sqlServer2019="docker-compose -f $GIT_FOLDER/Docker-files/SqlServer/SqlServer-2019/docker-compose.yml up"
@@ -33,6 +33,7 @@ alias mariaDb-10.5.2="docker-compose -f $GIT_FOLDER/Docker-files/MariaDb/MariaDb
 alias mariaDb=mariaDb-10.5.2
 
 # Useful aliases
+alias drop_cache="sudo sh -c \"echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'\""
 alias ls="ls --color=none"
 alias ll='ls -alF'
 alias la='ls -A'
