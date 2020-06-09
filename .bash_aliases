@@ -24,8 +24,8 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 # alias npx=npx14
 
 # Sql Server
-alias sqlServer2019="docker-compose -f $GIT_FOLDER/Docker-files/SqlServer/SqlServer-2019/docker-compose.yml up"
-alias sqlServer2017="docker-compose -f $GIT_FOLDER/Docker-files/SqlServer/SqlServer-2017/docker-compose.yml up"
+alias sqlServer2019="docker-compose -f $GIT_FOLDER/Docker-files/SqlServer/2019/docker-compose.yml up"
+alias sqlServer2017="docker-compose -f $GIT_FOLDER/Docker-files/SqlServer/2017/docker-compose.yml up"
 alias sqlServer=sqlServer2017
 
 #MySql/MariaDb
