@@ -1,0 +1,1 @@
+/home/dimitri/.p10k.zsh
